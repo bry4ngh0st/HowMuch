@@ -9,7 +9,7 @@ class MontoController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('monto.index');
 	}
 
 	/**

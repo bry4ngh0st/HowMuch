@@ -59,4 +59,6 @@ Route::post(
 	)
 );
 
+Route::get('/', 'MontoController@index');
+
 Route::get('crear-monto', 'MontoController@create');
