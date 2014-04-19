@@ -1,0 +1,109 @@
+.full-search-bar {
+    width: 72%;
+    margin: 0 auto 38px;
+    position: relative;
+}
+.full-search-bar form {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+.full-search-bar form .clearfix {
+    margin: 0;
+}
+.full-search-bar form input[type=text] {	
+    float: left;
+    height: 45px;
+    font-size: 20px;
+    line-height: 24px;
+    -webkit-border-radius: 6px 0 0 6px;
+    -moz-border-radius: 6px 0 0 6px;
+    border-radius: 6px 0 0 6px;
+    border-right: 0;
+    width: 95%;
+    margin-bottom: 0;
+}
+.full-search-bar form button[type=submit] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 46px;
+    height: 45px;
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;    
+    border: solid 1px #f5f5f5;
+}
+.full-search-bar .search-input-item {
+    padding: 10px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+.search-input-stream {
+    margin-bottom: 0;
+}
+.search-status {
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+    position: absolute;
+    width: 100%
+   }
+.search-loader {
+    height: 22px;
+}
+.loading .search-status {
+    display: block;
+}
+.item-stream {
+    background-color: #f5f5f5;
+    border: 1px solid #d8d8d8;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.stream-item, .ui-menu-item {
+    position: relative;
+    background-color: #f5f5f5;
+    padding: 6px;
+}
+.stream-item+.stream-item, .ui-menu-item+.ui-menu-item {
+    border-top: 1px solid #d8d8d8;
+}
+.stream-item.song-item, .ui-menu-item {
+    min-height: 40px;
+}
+@media (max-width: 480px) {    
+.full-search-bar {
+    width: 95% !important;
+}
+.full-search-bar form input[type=text] {
+    font-size: 18px;
+    line-height: 24px;
+    height: 45px;
+}
+}@media (max-width: 768px) {
+    .container {
+    	width: 96%
+    }
+.full-search-bar {
+    width: 85%
+}
+}@media (min-width: 768px) and (max-width: 1200px) {
+    .social-wrapper li {
+    margin-right: 2px;
+}
+}@media (min-width: 1200px) {
+    .container {
+    width: 66%;
+    max-width: 1000px;
+}
+.full-search-bar form input[type=text] {
+    height: 45px;
+}
+.full-search-bar form button[type=submit] {
+    height: 45px;
+}
+}
