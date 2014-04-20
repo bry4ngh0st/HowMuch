@@ -75,5 +75,13 @@ class MontoController extends \BaseController {
 	{
 		//
 	}
+	
+	public function search()
+	{
+		$s = Input::get('s');
+		$in = Input::get('in');
+		
+		return View::make('monto.search')->with('s', $s.' en '.$in);;
+	}
 
 }

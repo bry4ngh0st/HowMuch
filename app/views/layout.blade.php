@@ -34,38 +34,9 @@
 	    </div>		
 				
 		<div class="container">
-			<div class="starter-template">
-		    	<h3><b>Si tiene</b> valor para ti, tiene un precio, <b>encuentralo</b> aqui...</h3>
-		    	
-				<div class="full-search-bar">
-					<ul class="item-stream unstyled search-input-stream">
-						<li class="stream-item stream-header search-input-item">
-							<form>
-								<input id="search" name="q" type="text" placeholder="buscar el precio de..." autocomplete="off" value="">
-								<button class="btn btn-large btn-inverse" type="submit">
-									<i class="icon-search icon-white"></i>
-								</button>
-							</form>							
-						</li>
-					</ul>
-					<div class="search-status">
-						<img src={{ url('img/circle_loader.gif') }} class="search-loader" />
-					</div>
-				</div>
-				
-				<div class="image-list">
-					<a><img src={{ url('img/general/professionals.png') }} /></a>
-					<a><img src={{ url('img/general/travels.jpg') }} /></a>
-					<a><img src={{ url('img/general/foods.jpg') }} /></a>
-					<a><img src={{ url('img/general/rare.jpg') }} /></a>
-				</div>
-				<div class="sign">
-					<span>How Much is powered by Innova. Sign in or try it for <a>free</a>.</span>
-					<a href={{ url('/') }} class="btn btn-primary" data-method="post" >Sign in</a>
-				</div>
+			<div class="starter-template">				
+				@yield('content')
 		    </div>
-		    
-			@yield('content')
 		</div>
 		
 		<!--  <footer></footer> -->

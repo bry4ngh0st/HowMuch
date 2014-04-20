@@ -6,14 +6,18 @@ body{
 
 .starter-template {
 	margin: 20px;
-  	padding: 40px 0px;
+  	padding: 10px 0 10px 0;
   	text-align: center;
   	border: 1px solid #e2e2e2;
-  	border-radius: 30px;  	
+  	border-radius: 20px;  	
+}
+
+.starter-template .container-title{
+	margin-top: 80px;
 }
 
 .image-list{
-	margin: 0;
+	margin: 50px 0;
 	padding: 0;	
 	width: 100%;
 	background-color: #e2e2e2;
@@ -26,10 +30,7 @@ body{
 	padding: 0;
 }
 
-@media (max-width: 480px) {    
-	.image-list {
-	    width: 95% !important;
-	}
+@media (max-width: 480px) {
 	.image-list img {
 	    width: 50px;
 		height: 20px;
@@ -37,9 +38,6 @@ body{
 }
 
 @media (max-width: 768px) {
-    .image-list {
-	    width: 96%;
-	}
 	.image-list img {
 	    width: 130px;
 		height: 90px;
@@ -128,14 +126,15 @@ footer{
 	font-weight: bold;
 }
 
-#map-canvas{
-    width:470px; 
-    height:200px;
+#pickup {
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-#pickup {
-    height:60px; 
-    overflow:hidden;
+#map-canvas{
+	display: none;
+    width: 100%;
+    height: 150px;
 }
 
 input[type="text"]{

@@ -1,6 +1,7 @@
 .full-search-bar {
     width: 72%;
-    margin: 0 auto 38px;
+    margin: 0 auto 20px;
+    margin-top: 30px;
     position: relative;
 }
 .full-search-bar form {
@@ -21,8 +22,14 @@
     -moz-border-radius: 6px 0 0 6px;
     border-radius: 6px 0 0 6px;
     border-right: 0;
-    width: 95%;
+    width: 50%;
     margin-bottom: 0;
+}
+.full-search-bar form #location{
+	width: 45%;
+	-webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 .full-search-bar form button[type=submit] {
     position: absolute;

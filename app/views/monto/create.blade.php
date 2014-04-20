@@ -55,7 +55,7 @@
 		{{ Form::select('moneda', array('USD' => 'Dolares', 'PEN' => 'Soles')) }}
 		{{ $errors->first('monto'); }}	
 	</div>
-
+	
 	{{ Form::submit('Guardar') }}
 	{{ Form::close() }}
 
