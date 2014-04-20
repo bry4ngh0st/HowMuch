@@ -64,3 +64,8 @@ Route::get('/', 'MontoController@index');
 Route::get('crear-monto', 'MontoController@create');
 Route::get('search', 'MontoController@search');
 Route::post('search', 'MontoController@search');
+
+Route::get('/{question?}', function($question)
+{
+	return View::make('monto.search')->with('question', $question);
+});

@@ -140,3 +140,37 @@ footer{
 input[type="text"]{
 	height: 30px;
 }
+
+.container-results{
+	margin: 20px 0;
+}
+
+.result-template{
+	border: solid 1px gray;
+	border-width: 1px 0 0 0;
+	font-size: 13px;
+}
+
+.result-template ul{
+	width: 100%;
+	list-style: none;
+	margin-top: 5px;
+}
+
+.result-template ul li{
+	display: inline-block;
+	height: 20px;
+	padding-left: 23px;
+}
+
+.result-template .result-location{
+	background: no-repeat url(../img/general/location.png);	
+}
+
+.result-template .result-tags{
+	background: no-repeat url(../img/general/tag.png);	
+}
+
+.result-template .result-date{
+	background: no-repeat url(../img/general/calendar.png);	
+}
