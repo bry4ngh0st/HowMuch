@@ -4,6 +4,19 @@ body{
 	padding-top: 50px;
 }
 
+input[type="text"]{
+	height: 30px;
+}
+
+.iconable{
+	padding-left: 20px;
+}
+
+.container-results{
+	margin: 20px 0;
+	text-align: left;
+}
+
 .starter-template {
 	margin: 20px;
   	padding: 10px 0 10px 0;
@@ -64,7 +77,7 @@ footer{
 
 .carousel-control, .item{
      border-radius: 4px;
- }
+}
 
 .caption{
     height: 130px;
@@ -137,40 +150,82 @@ footer{
     height: 150px;
 }
 
-input[type="text"]{
-	height: 30px;
-}
+/* End Selectize */
 
-.container-results{
+
+/* Search : Result styles */
+
+.search-form-results{
 	margin: 20px 0;
+	padding: 15px 0 0 0;
+	background-color: whitesmoke;
+	border: 1px solid #e2e2e2;	
 }
 
 .result-template{
-	border: solid 1px gray;
+	border: solid 1px #e2e2e2;
 	border-width: 1px 0 0 0;
-	font-size: 13px;
+	padding: 20px;
 }
 
-.result-template ul{
-	width: 100%;
-	list-style: none;
-	margin-top: 5px;
-}
-
-.result-template ul li{
+.result-template .box{
 	display: inline-block;
-	height: 20px;
-	padding-left: 23px;
+	margin: 5px;
 }
 
-.result-template .result-location{
+.result-commands button{
+	height: 25px;
+	width: 10px;
+	border: 1px solid gray;
+	margin-bottom: 5px;
+	display: list-item;
+}
+
+/* Command buttons */
+.icon-up, .icon-point, .icon-down{
+	background: url(../img/bootstrap/glyphicons-halflings-black.png) no-repeat;		
+}
+
+.icon-up{
+	background-position: -289px -97px;
+}
+
+.icon-point{	
+	background-position: -289px -1px;
+}
+
+.icon-down{	
+	background-position: -312px -97px;
+}
+
+/* End Command buttons */
+
+/* Details result styles */
+
+.result-template .result-description .result-location{
 	background: no-repeat url(../img/general/location.png);	
 }
 
-.result-template .result-tags{
+.result-template .result-description .result-tags{
 	background: no-repeat url(../img/general/tag.png);	
 }
 
-.result-template .result-date{
+.result-template .result-description .result-date{
 	background: no-repeat url(../img/general/calendar.png);	
 }
+
+.result-amount{
+	width: 10%;
+	font-size: 20px;
+	text-align: center;
+}
+
+.result-description{
+	font-size: 16px;
+}
+
+.result-details{
+	font-size: 12px;
+}
+
+/* End Details result styles */

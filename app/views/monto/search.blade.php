@@ -15,39 +15,43 @@
 			$in = $data[1];
 		}
  	?>
-	 
-	{{ Form::open(array('url' => 'search', 'class' => 'form', 'method' => 'get')) }}
-		Resultados para
-		{{ Form::text('s', $s, array('id' => 'search', "placeholder" => "buscar el precio de...", "autocomplete" => "off", "value" => "")) }}
-		en
-		{{ Form::text('in', $in, array('id' => 'location', "placeholder" => "ubicacion", "autocomplete" => "off")) }}
-		
-		{{ Form::hidden('ltt', isset($_GET['ltt']) ? $_GET['ltt'] : '', array('id' => 'latitud')) }}
-		{{ Form::hidden('lgt', isset($_GET['lgt']) ? $_GET['lgt'] : '', array('id' => 'longitud')) }}
-		
-		{{ Form::submit('Buscar') }}
-	{{ Form::close() }}
-	
-	<div class="container-results">	 	
-		@for($i=0; $i<100; $i++)
- 		<div class="result-template">
- 			<ul>
- 				<li>
- 					<a href="#">+</a>
- 					<a href="#">/</a>
- 					<a href="#">-</a>
- 				</li>
-	 			<li class="result-amount">
-	 				<a>USD</a>
-	 				<a>240.00</a>
-	 			</li>
-	 			<li class="result-location">Lima, Peru</li>
-	 			<li class="result-description">Description for a result.</li>
-	 			<li class="result-tags">a, b, c, d</li>
-	 			<li class="result-date">{{ date('Y-m-d'); }}</li>
-	 		</ul>
-		</div> 		
-		@endfor
+	<div class="search-form-results">
+		{{ Form::open(array('url' => 'search', 'class' => 'form', 'method' => 'get')) }}
+			Resultados para
+			{{ Form::text('s', $s, array('id' => 'search', "placeholder" => "buscar el precio de...", "autocomplete" => "off", "value" => "")) }}
+			en
+			{{ Form::text('in', $in, array('id' => 'location', "placeholder" => "ubicacion", "autocomplete" => "off")) }}
+			
+			{{ Form::hidden('ltt', isset($_GET['ltt']) ? $_GET['ltt'] : '', array('id' => 'latitud')) }}
+			{{ Form::hidden('lgt', isset($_GET['lgt']) ? $_GET['lgt'] : '', array('id' => 'longitud')) }}
+			
+			<button class="btn btn-large btn-inverse" type="submit">
+				<i class="icon-search icon-white"></i>
+			</button>
+		{{ Form::close() }}		
+	</div>
+	<div class="container-results">
+		@foreach($results as $result)
+		<div class="result-template">
+			<div class="box result-commands">
+				<button title='"Me parece excesivo"' class="btn btn-down" type="submit"><i class="icon-down"></i></button>
+ 				<button title='"Es razonable"' class="btn btn-point" type="submit"><i class="icon-point"></i></button> 					
+ 				<button title='"Me parece insuficiente"' class="btn btn-up" type="submit"><i class="icon-up"></i></button>			
+			</div>
+			<div class="box result-amount">
+				{{ $result->monto }}
+	 			<a>{{ $result->moneda_codigo }}</a>
+			</div>
+			<div class="box result-description">
+				<h4>{{ $result->descripcion }}</h4>
+				<div class="result-details">
+					<div class="iconable result-location">{{ $result->ubicacion }}</div>
+		 			<div class="iconable result-date">{{ date_format($result->created_at, 'Y-m-d') }}</div>
+		 			<div class="iconable result-tags">{{ $result->etiquetas }}</div>
+				</div> 				
+			</div>
+		</div>
+		@endforeach
 	</div>
 	
 	<div id="pickup">

@@ -81,6 +81,19 @@ class MontoController extends \BaseController {
 		$s = Input::get('s');
 		$in = Input::get('in');
 		
-		return View::make('monto.search')->with('question', $s.' en '.$in);
+		$data = Monto::all();
+		
+		foreach($data as $key => $monto){
+			
+			if($monto->entidad_id){
+				$entidad = Entidad::find($monto->entidad_id);
+				
+				$monto->etiquetas = $entidad->categoria.', '.$entidad->subcategoria.', '.$entidad->nombre;			 	
+			}else{
+				$monto->etiquetas = "Otros";
+			}
+		}
+		
+		return View::make('monto.search')->with('question', $s.' en '.$in)->with('results', $data);
 	}
 }

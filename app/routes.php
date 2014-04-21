@@ -67,5 +67,18 @@ Route::post('search', 'MontoController@search');
 
 Route::get('/{question?}', function($question)
 {
-	return View::make('monto.search')->with('question', $question);
+	$data = Monto::all();
+	
+	foreach($data as $key => $monto){
+			
+		if($monto->entidad_id){
+			$entidad = Entidad::find($monto->entidad_id);
+	
+			$monto->etiquetas = $entidad->categoria.', '.$entidad->subcategoria.', '.$entidad->nombre;
+		}else{
+			$monto->etiquetas = "Otros";
+		}
+	}
+	
+	return View::make('monto.search')->with('question', $question)->with('results', $data);
 });
